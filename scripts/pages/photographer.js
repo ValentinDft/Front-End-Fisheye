@@ -5,6 +5,48 @@ async function getPhotographer() {
 }
 
 async function displayImg(mediaData) {
+
+    // Sort list img
+    const itemsDropdownSelector = [...document.querySelectorAll(".items")];
+
+    let sortChoice = (input) => {
+        let dropdownValue = input.target.id
+        
+        if (dropdownValue === 'popularity') {
+            mediaData.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
+            mediaData.map((img) => {
+                const imgModel = imgFactory(img);
+                listImg.removeChild(listImg.lastChild);
+                setTimeout(() => {
+                    listImg.appendChild(imgModel);
+                }, 500);
+            })
+        } else if (dropdownValue === 'date') {
+            mediaData.sort((a, b) => new Date(b.date) - new Date(a.date));
+            mediaData.map((img) => {
+                const imgModel = imgFactory(img);
+                listImg.removeChild(listImg.lastChild);
+                setTimeout(() => {
+                    listImg.appendChild(imgModel);
+                }, 500);
+            })
+        } else if (dropdownValue === 'title') {
+            mediaData.sort((a, b) => a.title.localeCompare(b.title));
+            mediaData.map((img) => {
+                const imgModel = imgFactory(img);
+                listImg.removeChild(listImg.lastChild);
+                setTimeout(() => {
+                    listImg.appendChild(imgModel);
+                }, 500);
+            })
+        }
+    }
+
+    itemsDropdownSelector.map((input) => {
+        input.addEventListener('click', sortChoice);
+    });
+    mediaData.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
+
     // Create list of media
     const listImg = document.querySelector(".list-img");
     mediaData.map((img) => {
