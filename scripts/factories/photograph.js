@@ -53,7 +53,6 @@ function photographFactory(media, photographer) {
 }
 
 function imgFactory(media){
-    
     const containerImg = document.createElement( 'div' );
     containerImg.setAttribute("class", "card-img");
 
