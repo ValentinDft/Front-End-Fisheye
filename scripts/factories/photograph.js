@@ -62,6 +62,7 @@ function imgFactory(media){
         const img = document.createElement( 'img' );
         img.setAttribute("src", `assets/images/${media.image}`);
         img.setAttribute("alt", media.image);
+        img.setAttribute("tabindex", 0);
         containerImg.appendChild(img);
     } else if (media.video) {
         var video = document.createElement( 'video' );
@@ -82,10 +83,11 @@ function imgFactory(media){
     nbLike.setAttribute('class', 'nb-likes');
     const iconLike = document.createElement( 'i' );
     iconLike.setAttribute('class', 'fa-regular fa-heart');
+    iconLike.setAttribute("tabindex", 0);
 
     let clickLike = false;
 
-    iconLike.onclick = function like() {
+    let like = () => {
         clickLike = !clickLike;
         clickLike ? count = media.likes + 1 : count = media.likes;
         nbLike.textContent = `${count}`;
@@ -101,6 +103,14 @@ function imgFactory(media){
         const selectorTotalLikes = document.querySelector(".total-likes");
         selectorTotalLikes.textContent = totalCountLikes
     }
+
+    iconLike.onclick = like;
+
+    iconLike.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          like();
+        }
+      })
 
     containerImg.appendChild(containerDetails);
     containerDetails.appendChild(imgtitle);
