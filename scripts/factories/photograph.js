@@ -62,6 +62,18 @@ function imgFactory(media){
         img.setAttribute("src", `assets/images/${media.image}`);
         img.setAttribute("alt", media.image);
         img.setAttribute("tabindex", 0);
+
+        // Display lightbox on click
+        img.addEventListener("click", function(){
+            displayLightbox(media);
+        }, false);
+        // Display lightbox on press enter
+        img.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                displayLightbox(media);
+            }
+          })
+
         containerImg.appendChild(img);
     } else if (media.video) {
         var video = document.createElement( 'video' );

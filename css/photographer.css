@@ -2,6 +2,10 @@
     display: none;
 }
 
+#lightbox {
+    display: none;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: auto;
@@ -308,6 +312,54 @@ form textarea {
     height: 150px;
     border: none;
     border-radius: 5px;
+}
+
+.modal-lightbox{
+    border-radius: 5px;
+    background-color: white;
+    width: 95vw;
+    height: 95vh;
+    padding: 35px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-lightbox #media{
+    width: 60vw;
+    height: 80vh;
+    object-fit: contain;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-lightbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.icon-navigation{
+    color: #d3573C;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.panel-right-lightbox{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close{
+    cursor: pointer;
+    height: 40px;
+    filter: invert(37%) sepia(100%) saturate(662%) hue-rotate(331deg) brightness(91%) contrast(86%);
 }
 
 @media screen and (max-width: 1200px) {
