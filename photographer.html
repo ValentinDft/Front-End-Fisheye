@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <a href="/"><img src="assets/images/logo.png" class="logo"/></a>
-    </header>
-    <main id="main" aria-hidden="false">
-      <div class="photograph-header">
-        <div class="photograph-header-contact">
-          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-        </div>
-      </div>
-      <div class="photograph-main">
-        <div class="sort-list-img">
-          <label>Trier par</label>
+	<head>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+		<title>Fisheye - photographe</title>
+	</head>
+	<body>
+		<header>
+			<a href="/"><img src="assets/images/logo.png" class="logo" /></a>
+		</header>
+		<main id="main" aria-hidden="false">
+			<div class="photograph-header">
+				<div class="photograph-header-contact">
+					<button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+				</div>
+			</div>
+			<div class="photograph-main">
+				<div class="sort-list-img">
+					<label>Trier par</label>
 
-          <div class="dropdown" tabindex="0">
-            <p class="items" id="popularity">Popularité <i class="fa-solid fa-angle-down"></i></p>
-            <div class="dropdown-content">
-              <p class="items" id="date">Date</p>
-              <p class="items" id="title">Titre</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="list-img"></div>
-      </div>
-    </main>
-    <div id="contact_modal">
+					<div class="dropdown" tabindex="0">
+						<p class="items" id="popularity">Popularité <i class="fa-solid fa-angle-down"></i></p>
+						<div class="dropdown-content">
+							<p class="items" id="date">Date</p>
+							<p class="items" id="title">Titre</p>
+						</div>
+					</div>
+				</div>
+				<div class="list-img"></div>
+			</div>
+		</main>
+		<div id="contact_modal">
 			<div class="modal" tabindex="-1" aria-labelledby="dialog contact">
 				<header>
-          <div class="header-modal-title">
-            <h2>Contactez-moi</h2>
-            <h2 id="photograph-name"></h2>
-          </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" id="close"/>
-        </header>
+					<div class="header-modal-title">
+						<h2>Contactez-moi</h2>
+						<h2 id="photograph-name"></h2>
+					</div>
+					<img src="assets/icons/close.svg" onclick="closeModal()" id="close" />
+				</header>
 				<form id="form">
 					<div class="formData">
 						<label for="firstName">Prénom</label>
-						<input type="text" name="firstName" id="firstName" minlength="3" required/>
-            <label for="lastName">Nom</label>
-						<input type="text" name="lastName" id="lastName" minlength="3" required/>
-            <label for="email">Email</label>
-						<input type="email" name="email" id="email" minlength="3" required/>
-            <label for="messafe">Votre message</label>
+						<input type="text" name="firstName" id="firstName" minlength="3" required />
+						<label for="lastName">Nom</label>
+						<input type="text" name="lastName" id="lastName" minlength="3" required />
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" minlength="3" required />
+						<label for="messafe">Votre message</label>
 						<textarea name="message" name="message" id="" rows="10" minlength="10" required></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+					<button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <div id="lightbox">
-			<div class="modal-lightbox" tabindex="-1" aria-labelledby="dialog img">
-        <div class="main-lightbox">
-          <div class="panel-left-lightbox">
-            <i class="fa-solid fa-angle-left icon-navigation"></i>
-          </div>
-          <div class="panel-center-lightbox"></div>
-          <div class="panel-right-lightbox">
-            <div style="height: 45%;">
-              <img src="assets/icons/close.svg" onclick="closeLightbox()" id="close"/>
-            </div>
-            <div style="height: 55%;">
-              <i class="fa-solid fa-angle-right icon-navigation"></i>
-            </div>
-            
-          </div>
-        </div>
+		<div id="lightbox">
+			<div class="modal-lightbox" tabindex="-1" aria-labelledby="dialog image" role="dialog" aria-hidden="true">
+				<div class="main-lightbox">
+					<div class="panel-left-lightbox">
+						<i class="fa-solid fa-angle-left icon-navigation" id="previous-img"></i>
+					</div>
+					<div class="panel-center-lightbox">
+						<h3 class="title-img">Coucou</h3>
+					</div>
+					<div class="panel-right-lightbox">
+						<div style="height: 45%">
+							<img src="assets/icons/close.svg" onclick="closeLightbox()" id="close" />
+						</div>
+						<div style="height: 55%">
+							<i class="fa-solid fa-angle-right icon-navigation" id="next-img"></i>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="/scripts/utils/lightbox.js"></script>
-    <script src="/scripts/factories/photograph.js"></script>
-  </body>
+		<script src="/scripts/pages/photographer.js"></script>
+		<script src="/scripts/utils/contactForm.js"></script>
+		<script src="/scripts/utils/lightbox.js"></script>
+		<script src="/scripts/factories/photograph.js"></script>
+	</body>
 </html>
