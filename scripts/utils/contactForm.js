@@ -65,7 +65,6 @@ let modal = name => {
         })
         
         if (data.length === formData.length) {
-            console.log(data);
             setTimeout(() => {
                 resetForm();
                 closeModal();
