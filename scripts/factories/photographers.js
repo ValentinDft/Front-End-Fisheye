@@ -3,6 +3,7 @@ function photographerFactory(data) {
   const { name, portrait, city, tagline, price, country, id } = data;
 
   const picture = `assets/photographers/${portrait}`;
+  console.log();
 
   function getUserCardDOM() {
     // Création et attribution des élements de la card
@@ -16,6 +17,7 @@ function photographerFactory(data) {
     containerImg.setAttribute("class", "container_img");
     const img = document.createElement("img");
     img.setAttribute("src", picture);
+    img.setAttribute("alt", portrait);
     const userName = document.createElement("h2");
     userName.textContent = name;
     const userLocation = document.createElement("h3");

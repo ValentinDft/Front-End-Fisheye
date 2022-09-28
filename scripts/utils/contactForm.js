@@ -37,7 +37,6 @@ let modal = (name) => {
   // Add atribut on modal
   const modal = document.querySelector(".modal");
   modal.setAttribute("aria-hidden", true);
-  modal.setAttribute("aria-describedby", "Modal de contact");
   modal.setAttribute("role", "dialog");
 
   // Add the photopgrapher name
@@ -70,7 +69,7 @@ let modal = (name) => {
       setTimeout(() => {
         resetForm();
         closeModal();
-      }, 2000);
+      }, 500);
     }
   };
 

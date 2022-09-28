@@ -1,16 +1,8 @@
 // Fetch des données json
 async function getPhotographers() {
-  if (document.location.host.includes("valentindft")) {
-    const response = await fetch(
-      "../Front-End-Fisheye/data/photographers.json"
-    );
-    const data = await response.json();
-    return data.photographers;
-  } else {
-    const response = await fetch("../data/photographers.json");
-    const data = await response.json();
-    return data.photographers;
-  }
+  const response = await fetch("../data/photographers.json");
+  const data = await response.json();
+  return data.photographers;
 }
 
 // Affiche les photographes

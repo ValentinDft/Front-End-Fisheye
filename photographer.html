@@ -15,7 +15,9 @@
   </head>
   <body>
     <header>
-      <a href="/"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="/"
+        ><img src="assets/images/logo.png" class="logo" alt="logo"
+      /></a>
     </header>
     <main id="main" aria-hidden="false">
       <div class="photograph-header">
@@ -43,13 +45,18 @@
       </div>
     </main>
     <dialog id="contact_modal">
-      <div class="modal" tabindex="-1" aria-labelledby="dialog contact">
+      <div class="modal" tabindex="-1" role="dialog">
         <header>
           <div class="header-modal-title">
             <h2>Contactez-moi</h2>
             <h2 id="photograph-name"></h2>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" id="close" />
+          <img
+            src="assets/icons/close.svg"
+            onclick="closeModal()"
+            id="close"
+            alt="close"
+          />
         </header>
         <form id="form">
           <div class="formData">
@@ -77,11 +84,10 @@
               minlength="3"
               required
             />
-            <label for="messafe">Votre message</label>
+            <label for="message">Votre message</label>
             <textarea
               name="message"
-              name="message"
-              id=""
+              id="message"
               rows="10"
               minlength="10"
               required
@@ -95,7 +101,6 @@
       <div
         class="modal-lightbox"
         tabindex="-1"
-        aria-labelledby="dialog image"
         role="dialog"
         aria-hidden="true"
       >
@@ -114,7 +119,8 @@
               <img
                 src="assets/icons/close.svg"
                 onclick="closeLightbox()"
-                id="close"
+                id="close-alt"
+                alt="close"
               />
             </div>
             <div style="height: 55%">

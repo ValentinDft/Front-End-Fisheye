@@ -196,11 +196,6 @@ video {
   left: 78vw;
 }
 
-.insert-like-price p {
-  font-weight: bold;
-  font-size: 18px;
-}
-
 .photograph-main {
   margin: 40px 100px;
 }
@@ -345,7 +340,7 @@ form textarea {
 }
 
 .icon-navigation {
-  color: #d3573c;
+  color: #911c1c !important;
   font-size: 60px;
   cursor: pointer;
 }
@@ -361,8 +356,17 @@ form textarea {
 #close {
   cursor: pointer;
   height: 40px;
-  filter: invert(37%) sepia(100%) saturate(662%) hue-rotate(331deg)
-    brightness(91%) contrast(86%);
+}
+
+#close-alt {
+  cursor: pointer;
+  height: 40px;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(76%) saturate(1334%)
+    hue-rotate(330deg) brightness(111%) contrast(113%);
+}
+
+.title-img {
+  color: #901c1c;
 }
 
 @media screen and (max-width: 1200px) {

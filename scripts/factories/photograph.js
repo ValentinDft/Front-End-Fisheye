@@ -19,6 +19,7 @@ function photographFactory(media, photographer) {
   headerAvatar.setAttribute("class", "photograph-header-avatar");
   const img = document.createElement("img");
   img.setAttribute("src", picture);
+  img.setAttribute("alt", photographer.portrait);
 
   // Affichage des éléments du header
   photographerHeader.insertBefore(
@@ -38,12 +39,12 @@ function photographFactory(media, photographer) {
   });
   const insertDiv = document.createElement("aside");
   insertDiv.setAttribute("class", "insert-like-price");
-  const elementLike = document.createElement("p");
+  const elementLike = document.createElement("h4");
   elementLike.textContent = `${countLikes}`;
   elementLike.setAttribute("class", "total-likes");
   const iconLike = document.createElement("i");
   iconLike.setAttribute("class", "fa-solid fa-heart");
-  const elementPrice = document.createElement("p");
+  const elementPrice = document.createElement("h4");
   elementPrice.textContent = `${price}€ / jour`;
 
   // Affichage des éléments
